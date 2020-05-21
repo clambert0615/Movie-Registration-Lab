@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model StoreFront
+
+
+    <style>
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+            a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+
+        .next {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+    </style>
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Movie Database</h1>
+    <p><h3><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Registration">Register a Movie Here</a></h3></p>
+</div>
+
+<h1> Browse through our available movies!</h1>
+
+
+<h3>Current Movie: @Model.Movie.MovieTitle </h3> <br /><br />
+
+<a href="/Home/Index/@Model.PrevIndex" class="previus">&laquo; Previous</a>
+<a href="/Home/Index/@Model.NextIndex" class="next">Next &raquo;</a>
+
+
+
